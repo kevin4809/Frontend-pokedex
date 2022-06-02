@@ -46,11 +46,11 @@ const PokemonDetail = () => {
           <div className="col card-two text-center ">
 
             <div className="row">
-              <h1>Types</h1>
+              <h1 className='text-muted'>Types</h1>
               {
                 pokemon.types?.map(type => (
                   <div className="col">
-                    {type.type.name}
+                    <h3>{type.type.name}</h3>
                   </div>
                 ))
               }
@@ -58,12 +58,12 @@ const PokemonDetail = () => {
           </div>
 
           <div className="col card-two text-center">
-            <h1>Abilities</h1>
+            <h1 className='text-muted'>Abilities</h1>
             <div className="row">
               {
                 pokemon.abilities?.map(ability => (
                   <div className="col ">
-                    {ability.ability.name}
+                    <h3>{ability.ability.name}</h3>
                   </div>
                 ))
               }
@@ -73,13 +73,13 @@ const PokemonDetail = () => {
 
         <div className="movements">
 
-          <h1 className='text-center'>Movements</h1>
+          <h1 className='text-center text-muted'>Movements</h1>
           <div className="row">
 
             {
               pokemon.moves?.map(allmovements => (
                 <div className="col align-self-center item-movement text-center ">
-                  {allmovements.move.name}
+                  <h5>{allmovements.move.name}</h5>
                 </div>
               ))
             }

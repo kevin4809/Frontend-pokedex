@@ -11,17 +11,42 @@ const Pokemons = () => {
     const [pokemons, setPokemons] = useState([]);
     const [searchPokemon, setSearchPokemon] = useState("");
     const [typePokemons, setTypePokemons] = useState([])
+    const [actualPage, setActualPage] = useState(0)
+
+
 
     const navigate = useNavigate();
 
     useEffect(() => {
 
-        axios.get('https://pokeapi.co/api/v2/pokemon/')
-            .then(res => setPokemons(res.data.results))
 
         axios.get('https://pokeapi.co/api/v2/type/')
             .then(res => setTypePokemons(res.data?.results))
     }, [])
+
+    useEffect(() => {
+        axios.get(`https://pokeapi.co/api/v2/pokemon/?limit=12&offset=${actualPage}`)
+            .then(res => setPokemons(res.data.results))
+
+    }, [actualPage])
+
+
+    console.log(actualPage)
+
+    const nextPage = () => {
+
+
+        setActualPage(actualPage + 13)
+        console.log('paso la pagina')
+    }
+
+    const lastPage = () => {
+        if (actualPage !== 0) {
+            setActualPage(actualPage - 13)
+        }
+
+    }
+
 
     const search = () => {
         navigate(`/pokemons/${searchPokemon}`)
@@ -71,6 +96,24 @@ const Pokemons = () => {
                         ))
                     }
                 </div>
+
+
+
+                <div className="buttoms">
+                    <div className="row">
+                        <div className="col-6">
+                            <button className='' onClick={lastPage}>last</button>
+                        </div>
+                        <div className="col-6">
+
+                            <button className='' onClick={nextPage}>next</button>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
 
             </div>
         </div>

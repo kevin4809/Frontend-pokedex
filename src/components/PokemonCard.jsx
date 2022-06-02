@@ -13,6 +13,7 @@ const PokemonCard = ({ pokemonUrl }) => {
             .then(res => setPokemon(res.data))
     }, [pokemonUrl])
 
+
     useEffect(() => {
 
         if (pokemon.types?.[0].type.name === 'grass') {

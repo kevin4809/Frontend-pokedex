@@ -5,7 +5,9 @@
     font-family: 'Patrick Hand', cursive;
 }
 
-
+.img-ball {
+    width: 100px;
+}
 
 .all-content-userInput {
     width: 100%;
@@ -14,7 +16,7 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-   
+
 }
 
 .container {
@@ -27,13 +29,6 @@
     box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
 }
 
-.tittle-input-card{
-    margin-top: 30px;
-}
-
-.card-inpunt h1 {
-    margin-bottom: 50px;
-}
 
 .card-inpunt input {
     width: 30%;
@@ -65,7 +60,27 @@
     background-size: cover;
 }
 
+.buttoms {
 
+    padding: 20px;
+    text-align: center;
+}
+
+.buttoms button {
+
+    width: 120px;
+    height: 50px;
+    border: none;
+    background-color: aqua;
+    border-radius: 20px;
+    font-size: 30px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.buttoms button:hover {
+    cursor: pointer;
+    animation: myAnim2 2s ease 0s 1 normal forwards;
+}
 
 .info-pokemon {
     background-color: whitesmoke;
@@ -151,7 +166,7 @@
     padding: 20px;
     margin: 20px;
     border-radius: 20px;
-    
+
 }
 
 .movements {
@@ -196,5 +211,34 @@
     100% {
         box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
         transform: scale(1.1);
+    }
+}
+
+@keyframes myAnim2 {
+
+    0%,
+    100% {
+        transform: translateX(0%);
+        transform-origin: 50% 50%;
+    }
+
+    15% {
+        transform: translateX(-30px) rotate(-6deg);
+    }
+
+    30% {
+        transform: translateX(15px) rotate(6deg);
+    }
+
+    45% {
+        transform: translateX(-15px) rotate(-3.6deg);
+    }
+
+    60% {
+        transform: translateX(9px) rotate(2.4deg);
+    }
+
+    75% {
+        transform: translateX(-6px) rotate(-1.2deg);
     }
 }

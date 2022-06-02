@@ -5,6 +5,8 @@ import { changeName } from '../store/slices/user.slice';
 import trainer from '../assets/trainer.png'
 import { RiSendPlaneFill } from "react-icons/ri";
 import letter from '../assets/letter.png'
+import imgPokeBall from '../assets/ball.png'
+
 const UserInput = () => {
 
     const [userName, setUserName] = useState("");
@@ -22,7 +24,8 @@ const UserInput = () => {
             <img className='letter-pokemon img-fluid mx-auto d-block' src={letter} alt="" />
             <div className='container position-absolute top-50 start-50 translate-middle '>
                 <div className="card text-center card-inpunt" >
-                    <h1 className='tittle-input-card'>Hello trainer!!</h1>
+                    <h1>HELLO TRAINER!</h1>
+                    <img className='img-fluid img-ball mx-auto d-block' src={imgPokeBall} alt="" />
                     <h3 >Give me your name to start</h3>
                     <img className='img-fluid position-absolute top-50 start-100 translate-middle img-trainer' src={trainer} alt="" />
                     <div className='card-body'>
@@ -31,7 +34,7 @@ const UserInput = () => {
                             onChange={(e) => setUserName(e.target.value)}
                             value={userName}
                         />
-                         <button  onClick={getName}><RiSendPlaneFill /></button>
+                        <button onClick={getName}><RiSendPlaneFill /></button>
                     </div>
 
                 </div>
