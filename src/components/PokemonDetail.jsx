@@ -13,7 +13,7 @@ const PokemonDetail = () => {
 
     axios.get(`https://pokeapi.co/api/v2/pokemon/${id}/`)
       .then(res => setPokemon(res.data))
-  }, [])
+  }, [id])
 
   console.log(pokemon)
 

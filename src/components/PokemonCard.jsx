@@ -44,7 +44,9 @@ const PokemonCard = ({ pokemonUrl }) => {
         } else if (pokemon.types?.[0].type.name === 'fairy') {
             setChangeBackground('radial-gradient(circle, #e71df6, #e240e8, #dc56db, #d567cf, #cc76c3)')
         }
-    }, [pokemon.types?.[0].type.name])
+    }, [pokemon.types])
+
+
 
     const navigate = useNavigate();
 
